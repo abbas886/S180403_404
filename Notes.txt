@@ -1,0 +1,181 @@
+09/04/18
+---------
+MD Abbas.
+
+Logging (Log4j - appache and java)
+
+
+
+I am gong to share this notes/ppt + sample code
+in git hub.
+
+
+SLF4j
+-------
+
+Environments
+-------------
+
+1)Dev Environment (JDK,Source code, Eclipse)
+2)QA Environment (no JDK, no code, no eclipse)   -JRE + server
+3)Product Environment
+4)UAT (User Acceptance Testing)
+
+
+Requirements
+-------------
+1)Functional Requirement - Given by the client
+2)Non-Functional Requirement
+	Transactional handling, logging, Security
+
+
+DO ->  Java Bean -> POJO -> A Java class
+	with properties/fields
+	and setter/getter methods
+
+
+DAO -> Data Access Object -  CRUD Operations
+	Create, Retrieve, Update, Delete
+
+MVC -> Model, View and Controller
+V-> JSP/HTML/CSS/Boostrap 
+C-> Mediator between V and M
+    will take a request from V and 
+    dispatch the require to M
+M-> Model - Business logic   (DO+DAO)
+
+
+What are factors we have to consider when we write a simple function
+--------------------------------------------------------------------
+1)performance
+2)reusability
+3)enhancement
+4)memory
+
+
+Naming convention for package
+-----------------------------
+orgnaization_type.orginzation_name.project_name.module_name/layername
+
+
+
+ncr =  n!/  (n-r)! * r!
+
+
+
+
+create git-hub account - today
+login in into git hub
+create repository
+
+download gitbash - using commands you can add files and commit/push
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Only Tomorrow - Koel Madam - will take class
+
+Remaining part of the project - I will continue.
