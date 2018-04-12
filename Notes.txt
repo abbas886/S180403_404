@@ -138,6 +138,174 @@ Tomorrow
 5)crete DB Connection
 6)Intergate (remove hardcoded valus  - niit , niit@123
 
+12/04/18
+---------
+What we have done yesterday
+---------------------------
+1)created dynamic webapp
+2)created login.html
+3)created LoginController.java - servlet
+4)Downloaded tomcat - configureld in eclipse
+5)we got some error - few of them we solved
+
+Today
+-------
+1)run the application in server  DONE
+2)solve errors if any  - DONE
+3)Download H2 database - DONE
+4)Establish DBConnect    - DONE
+	i)Tested the DBConnection
+5)create one table - user - DONE
+------Pending
+6)create DAO -
+7)Integrate with servelt - DAO
+
+
+Download H2 database 
+Open H2 Server
+default - schema - test
+schema -> keep group of database objects
+	   - table, view, index, sequence
+
+
+
+Datatype
+----------
+int, number
+char , nchar
+varchar2, nvarchar2, varchar
+
+contraints(5)
+-----------
+not null -> The field should not be empty
+unique   -> should not repeated
+primary ke -> unique + not null
+check
+reference / foreign key
+
+
+
+User Table
+----------
+create table user
+(
+emailid  varchar2(20) primary key,
+name   varchar2(40) not null,
+password  varchar2(40)  not null,
+mobile   varchar2(15) unique,
+address varchar2(100)
+)
+
+
+
+Debugging
+---------
+You have run in debug mode
+
+F6-> goto next line
+F7-> return to function where you are calling
+F5->  got to inside method
+
+
+
+
+
+
+
+
+
+
+
+
+DBConnection (SigleTon Design Pattern)
+------------
+1)user name
+2)password
+3)Driver
+4)URL - ipaddress, port, schema
+
+
+We supposed create only one instance of DBConnecction
+
+DBConnection con = new DBConnection();  //do not use
+
+
+DBConnection con1 = new DBConnection()
+
+DBConnection con2 = new DBConnection()
+
+DBConnection con3 = new DBConnection()
+
+
+How can you restrict the devlopers to use new key word.
+whenever the stement 
+new DBConnectin() -  will the constructor
+                    make this constructor as private
+
+
+Then how can they create one instance
+provide a method which returns instance - 
+should load only one time  - static
+
+
+Exception
+-----------
+1)ClassNotFoundException - org.h2.Driver
+Solution:  Coy the h2-1.4.x from H2 folder to
+  WEB-INF/lib folder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,7 @@
 package com.niit.loginapp.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,11 +31,16 @@ public class LoginController extends HttpServlet {
 		// tempororiy assuming the id : niit and password:niit@123
 		// are valid credentials. - later will intergate with db
 		if (id.equals("niit") && pwd.equals("niit@123")) {
-			dispatcher =request.getRequestDispatcher("home");
+			dispatcher =request.getRequestDispatcher("home.html");
 			dispatcher.forward(request, response);
 		} else {
-			dispatcher =request.getRequestDispatcher("login");
-			dispatcher.forward(request, response);
+			dispatcher =request.getRequestDispatcher("login.html");
+		//SOP - which will print on console.
+			//we should display message on the browser  - PrintWriter
+			PrintWriter writer = response.getWriter();
+			writer.append("Invalid Credentials...please try again.");
+			
+			dispatcher.include(request, response);
 			//show error message - will discuss tomorrow.
 		}
 
