@@ -71,6 +71,88 @@ create repository
 download gitbash - using commands you can add files and commit/push
 
 
+11/04/18
+---------
+This week agenda
+----------------
+
+1)Develop simple web app without using spring,hibernate and maven
+
+
+2)create a dynamic web app - in eclipse - DONE
+
+3)create simple login.html (View)  -DONE
+        crete a simple form
+	create two fields id, and password
+        create two buttons login, reset
+4)validate id and password is corrent or not
+    -the request supposed to go to controller
+    -a servelet  - a java class which extends HttpServlet (Controller)
+    -given some compilations errors - HttpServelet, HttpServletRequest
+	HttpServletResponse classes are not available.
+   -  configure the servlet-api.jar file in java build path - DONE
+  -  it will be available in tomcat/lib folder  -DONE
+
+	a)create home page
+	b) if the credentials are valid -> show home page
+		Dispacth/forward the request to home page
+                we have -> ReqeustDispatcher - Interface
+	c) if the credentials are invalid -> show login page + error message
+                Dispatch/include in login page.
+
+
+
+5)create a Model (DAO - Data Access Object)
+
+6)Create DBConnection - get the connection
+
+softwares
+----------
+JDK, Eclipse - we have
+web server - download tomcat - 9.X  -DONE.
+	-configure in eclipse.   - DONE.
+db server  - download H2
+Google:  download H2 
+
+
+
+Errors
+-------
+1)HTTP Status 500 – Internal Server Error
+500->resources is there but not proper.
+Please see complete exception stack trace.
+->in while class, in which method, in which line - the error is there
+->what error 
+
+404 -> The resource not available.  
+	resource ->html/jsp/servlet
+
+
+
+Tomorrow
+---------
+1)solve errors
+2)give error message "invalid credentials ...try again"
+3)Download h2
+4)create a table
+5)crete DB Connection
+6)Intergate (remove hardcoded valus  - niit , niit@123
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
 
 
 
