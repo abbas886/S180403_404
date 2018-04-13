@@ -254,7 +254,27 @@ Exception
 Solution:  Coy the h2-1.4.x from H2 folder to
   WEB-INF/lib folder
 
+13/04/18
+--------
+What we learn yesterday?
+-------------------------
+1)H2 - downloaded
+2)created the user table
+3)DBConnection
+4)Tested the DB Connectino
+-------------
+Today
+-----
+1)insert few records in user table.  - DONE
+2)Implement UserDAO  - simple java class - DONE
+	(CRUD -> create, retrieve, update, delete)
 
+3)Integrate servlet ->DAO (remove hard coded values)
+
+
+
+
+Download Anydesk...
 
 
 

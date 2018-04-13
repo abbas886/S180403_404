@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBConnection {
 	
-	private static final String name = "as";
+	private static final String name = "sa";
 	private static final String password = "";
 	private static final String driver = "org.h2.Driver";
 	private static final String url = "jdbc:h2:tcp://localhost/~/SPS180403";

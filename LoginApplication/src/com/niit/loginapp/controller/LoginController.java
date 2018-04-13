@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.niit.loginapp.dao.UserDAO;
+
 /**
  * Servlet implementation class LoginController
  */
@@ -30,7 +32,11 @@ public class LoginController extends HttpServlet {
 	
 		// tempororiy assuming the id : niit and password:niit@123
 		// are valid credentials. - later will intergate with db
-		if (id.equals("niit") && pwd.equals("niit@123")) {
+		//create UserDAO instance
+		UserDAO userDAO = new UserDAO();
+		//call validate method
+		boolean status =userDAO.validate(id, pwd);
+		if (status==true) {
 			dispatcher =request.getRequestDispatcher("home.html");
 			dispatcher.forward(request, response);
 		} else {
