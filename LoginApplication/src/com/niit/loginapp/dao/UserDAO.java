@@ -24,7 +24,8 @@ public class UserDAO {
 	{
 		//get db connection
 	Connection con=	DBConnection.getDBConnection();
-	
+	PreparedStatement pSt;
+	ResultSet result
 	//create statements  
 	try {
 		//Statement ->  for static queries ( without where conditions)
@@ -35,14 +36,14 @@ public class UserDAO {
 		
 		//PreparedStatements -> dynamic quersy (having where conditions
 		String query ="select * from user where name =? and password =?";
-		PreparedStatement pSt=con.prepareStatement(query);
+		pSt=con.prepareStatement(query);
 		
 		//replace 1st ? with id in a given query
 		pSt.setString(1, id);
 		//replace 2nd ? with password in a given query
 		pSt.setString(2, password);
 		
-		ResultSet result = pSt.executeQuery();
+		result = pSt.executeQuery();
 		//if there is any record exist , the method next() will return true
 		if(result.next())
 		{
@@ -60,6 +61,9 @@ public class UserDAO {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 		return false;
+	}finally
+	{
+		DBConnection.closeConnection(con, result, null, pSt);
 	}
 		
 		

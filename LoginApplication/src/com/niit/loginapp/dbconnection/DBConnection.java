@@ -2,7 +2,10 @@ package com.niit.loginapp.dbconnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DBConnection {
 	
@@ -33,6 +36,31 @@ public class DBConnection {
 			return null;
 		}
 		
+	}
+	
+	public static void closeConnection(Connection con, ResultSet rs, Statement st, PreparedStatement pst)
+	{
+		try {
+			if(con!=null)
+			{
+				con.close();
+			}
+			if(rs!=null)
+			{
+				rs.close();
+			}
+			if(st!=null)
+			{
+				st.close();
+			}
+			if(pst!=null)
+			{
+				pst.close();
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
