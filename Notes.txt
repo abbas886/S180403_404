@@ -278,6 +278,222 @@ Download Anydesk...
 
 
 
+16/04/18
+--------
+This week
+-----------
+1)going to start shopping cart app
+2)Maven
+3)Spring
+
+Today
+-----
+Crete two separate projects
+1)Shoppingcart backend project
+
+2)Shoppingcart frontend project
+
+In the clipse :
+1)java project - can write only java code
+2)Dynamic web project - can write - java code + html,css,jsp
+
+we are going use maven
+maven -> no need to donwload the required s/w manually
+	-by individual developers
+document - mention softwares + version
+-POM -> Project Object Model - xml 
+	groupid,  artifact id , version
+1)front end side -> maven-web-app (web app)
+2)back end side -> maven-quick-start (java app)
+
+Two ways to create these projects
+----------------------------------
+1) directly in the eclipse - DONE
+2) using mvn commands -
+	i)Download maven
+	ii)Environmen setup
+	iii) write commands.
+mvn archetype:generate -DgroupId=com.niit -DartifactId=ShoppingCartTemp -DarchetypeArtifactId=maven-archetype-quickstart
+
+Note:  If you create mvn project through command prompt
+    	you can use this project directly in eclipse
+    --convert this mvn project into eclipse project.
+       mvn eclipse:eclipse
+Note:  run this command in folder where pom.xml file exist.
+
+Dependencies
+-------------
+1)Back End
+ spring core, spring context
+ hibernate, h2 etc.,
+
+
+2)Front End
+  spring web, spring web mvc
+
+we need to get groupid, artifactid and version
+of above softwares jar/war
+
+mvnrepository.com
+------------------
+
+
+Test whether these projects are created properly or not   -- Pending
+--------------------------------------------------------
+
+
+
+17/04/18
+---------
+Yesterday
+---------
+1)Concepts of Spring frameworks  -DONE 
+2)Created quick-start and web-app projects
+	through eclipse  -DONE
+3)We have to test  -
+	i)Test Front end project - DONE
+	ii)Test Backend project
+		a)create simiple bean class - DONE
+		b)Without using 'new' key word
+			get the instance   -DONE
+4)Created these projects through command prompt.
+
+5)Configuruging front end project
+	web.xml
+	dispatcher servlet.xml
+
+
+
+
+
+Annotation: - Core Java 1.5
+
+-instructions to the compiler/runtime/deploy time
+  to generate the code on-behalf of you.
+
+@Component  -> Will create the instance of the class
+
+What will happen if create the instance our selves.
+---------------------------------------------------
+There may be 'n' developers may there.
+each and developer - in different classes , they 
+create unncessaray instances.
+
+
+
+Errors:  mvn install
+-------
+1)No compiler is provided in this environment. 
+Perhaps you are running on a JRE rather than a JDK?
+[INFO] 1 error
+
+Solution:
+In the project build path - provide JDK path
+		-not JRE Path
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
