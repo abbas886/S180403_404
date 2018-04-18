@@ -392,6 +392,93 @@ In the project build path - provide JDK path
 		-not JRE Path
 
 
+18/04/18
+--------
+Yesteday:
+1)created two separate projects 
+	a)maven quick start  -  Tested  --How we tested?
+	b)maven web app
+
+Today:
+Maven - web ap  - configuration
+	a)web.xml
+	b)dispatcher-servlent / front controller
+Spring-mvc - created ppt - shared in git hub
+
+
+http://localhost:8080/shoppingcart/validate
+resources -> handler/servetlet/controller...jsp/html
+
+
+http://localhost:8081/ShoppingCartFrontEnd/
+
+/ - method handler - define
+
+WARNING: No mapping found for HTTP request with URI
+ [/ShoppingCartFrontEnd/] in DispatcherServlet with name
+ 'dispatcher'
+
+We have create A controller
+define a method which should be excuted when
+user type  - in browser
+
+http://localhost:8081/ShoppingCartFrontEnd/
+
+
+
+Error:
+-----
+1) java.lang.ClassNotFoundException: 
+org.springframework.web.context.ContextLoaderListener
+
+Solution:
+1)right click on project
+2)select project properties
+3)click on Deployment Assembly
+4)click on add button
+5)select java build path entries
+6)Click next
+7)select maven
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
