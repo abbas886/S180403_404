@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+
+.headerbackground{
+	
+	background-image: url("../images/bodybackground.PNG");
+}
+
+.bodybackground{
+	background-image: url("../images/headerbackground.PNG");
+	background-size: 100%;
+}

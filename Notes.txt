@@ -440,6 +440,76 @@ Solution:
 6)Click next
 7)select maven
 
+19/04/18
+---------
+
+yesterday:
+-------
+1)Configured web.xml, dispatcherservlet.xml
+2)Created on controller
+3)we written method handler / handler mapping
+4)Teststed
+
+Today
+-----
+
+We need to create hypber links  - login, register
+Temporarily will code manually, will copy from google
+
+
+
+You can write your own css classes
+css classes -> to apply some style (color, size, font etc.,)
+
+
+20/04/18
+--------
+1)SPA
+2)Model  - Interface
+3)ModelAndView - Class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
