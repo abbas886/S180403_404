@@ -11,26 +11,26 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 
 </head>
-<body class="bodybackground">
+<body>
 
 ${msg}
-${loginMessage}
-${logoutMessage}
+
 
 	<center>
-		<h2 class ="headerbackground">Welcome to Shopping Cart</h2>
+		<h2 >Welcome to Shopping Cart</h2>
 	</center>
 
 	<!--  include login_header.jsp here -->
 	<jsp:include page="login_header.jsp"></jsp:include>
+	<jsp:include page="category_menu.jsp"></jsp:include>
 	
-	<jsp:include page="imageslider.jsp"></jsp:include>
+	<%-- <jsp:include page="imageslider.jsp"></jsp:include> --%>
 
 	<!-- when user click login, then only login.jsp
 	should include...it means we need to write
 	some condition. by using jstl tags -->
 
-<div class="bodybackground">
+<div>
 	<c:if test="${isUserClickedLogin==true}">
 		<jsp:include page="login.jsp"></jsp:include>
 	</c:if>

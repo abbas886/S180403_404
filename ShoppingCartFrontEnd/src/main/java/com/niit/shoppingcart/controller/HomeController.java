@@ -62,7 +62,7 @@ public class HomeController {
 	public ModelAndView logout()
 	{
 		ModelAndView mv = new ModelAndView("home");
-		mv.addObject("logoutMessage", "You successfully logged out from the app");
+		mv.addObject("msg", "You successfully logged out from the app");
 		//we need to write some other code to 
 		//do actual logout functionality.
 		//will add later.

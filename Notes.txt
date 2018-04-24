@@ -465,8 +465,258 @@ css classes -> to apply some style (color, size, font etc.,)
 20/04/18
 --------
 1)SPA
+  - Single Page Application
 2)Model  - Interface
 3)ModelAndView - Class
+like HashMap
+
+Communication between view(jsp) and controller(servlet/java class) 
+
+
+If you want send some information from controller -> view
+ you need to use Model  OR  ModelAndView
+
+
+ModelAndView -> Which page/view to navigate
+		what data/model to carry
+
+ModelAndView mv = new ModelAndView("home")
+mv.addObject("key" , data);  // this key can be used in jsp file
+by using Spring Expression Language
+${key}   - will display data
+
+
+23/04/18
+---------
+Last sesion:
+1)Model - interface
+2)ModelAndView - class
+3)Sending the data from controller to view
+4)Spring Expression language -  ${key}
+
+Today
+------
+Sending the data from view to controller
+login.jsp - id and password  - validate - in controller
+UserController - validate - registration - update
+
+
+Error :
+1)HTTP Status 405 – Method Not Allowed
+Message: Request method 'POST' not supported
+
+Solution: given method="post" in jsp page
+	and
+	@PostMapping() in controller
+
+
+2)
+HTTP Status 400 – Bad Request
+Message Required String parameter 'id' is not present
+
+Solution:
+Check name of the text field in jsp
+compare with the RequestParameter in controller
+ --both should be same
+
+
+24/04/18
+--------
+Yesterday :
+1)Sending data from view to controller
+	@RequestParam
+2)validated the credentials
+
+3)Solved few errors.
+
+
+Today:
+1)backend project
+2)we already created maven quick start project
+3)we tested the back end project
+	-without using "new" key word, we are able get instance
+--------DONE--------------
+4)Download H2 Databse - DONE
+5)we supposed to created the tables.
+
+
+
+
+
+There are different types of users in our application
+-----------------------------------------------------
+1)customer / end user
+2)admin
+3)supplier
+
+
+char, varchar, varchar2, nvarchar
+char ->fixed length
+name char(30)  -> 30 characters - memory
+name varchar(30) -variable length
+
+As of now, there is no difference
+between varchar and varchar2
+(Oracle official document)
+nvarchar - National Character set - Unicode - 16
+
+ASCII - 7 bit  - (2 pow 7 -1) - 127
+a..z  - 26
+A..Z  - 26	
+0..9  - 10
+special character - 20 - 82
+
+
+Unicode - 2 bytes - 16 bits
+
+
+
+Tables
+------
+User
+----
+create table user 
+(
+emailid varchar2(20) primary key,
+name varchar2(30) not null,
+password varchar2(20) not null,
+mobile varchar2(16) not null,
+address varchar2(100) null,
+role char default 1,
+added_date date default sysdate
+)
+
+-------------
+Category
+-----
+
+create table  category
+(
+name varchar2(20) primary key,
+description varchar2(100) null,
+added_date date default sysdate
+
+)
+
+-------
+Product
+-------
+create table product
+(
+id varchar2(20) primary key,
+name varchar2(30) not null,
+price int null,
+description varchar2(100) null,
+added_date date default sysdate,
+category_name varchar2(20) references category(name)
+
+)
+
+--------
+cart
+---------
+create table cart
+(
+
+id int primary key,
+emailid varchar2(20) references user(emailid),
+productname varchar2(30) not null,
+quantity int default 1,
+price int not null,
+status char default 'N',
+added_date date default sysdate
+)
+
+
+
+
+
+
+
+
+This week.
+--------
+1)Hibernate configuration
+2)Domain object
+3)DAO + DAOImpl
+4)JUnit Testcases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
