@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component   //will create instance of User class --- user
 @Table 
-public class Product {
+public class Cart {
 
 }

@@ -4,6 +4,7 @@ public class DemoTest {
 	
 	public static void main(String[] args) {
 		Demo demo = new Demo();
+		demo.add(10, 20);
 		
 	//System.out.println(demo.add(10, 20));
 	//System.out.println(demo.add(demo.add(10, 20) , 30));

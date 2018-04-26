@@ -641,6 +641,182 @@ This week.
 3)DAO + DAOImpl
 4)JUnit Testcases
 
+google:  abbas886  github
+
+send github account to me 
++  error description
++ complete error stack trace(eclipse console)
+:  abbas886@gmail.com
+
+Note: Do not send zip files--only git hub account.
+
+
+For other issues -  srinivas.patnaik@niit.com
+
+25/04/18
+--------
+What is hibernate
+Why hibernate
+Hibernate architecture
+Configuration data source.
+
+26/04/16
+---------
+Yesterday
+---------
+ORM
+Hibernate Architecture
+Configuration
+
+Today
+------
+1)Configuration - program
+	
+	a)create separate package
+		com.niit.shoppingcart.config
+	b)create a class - ApplicationContextConfig.java
+		OR DBConfig.java
+	c)Above the class 3 annotations
+		@Configuration
+		@ComponentScan(basepackage="com.niit")
+		@EnableTransactionManagement
+	d)Need to define function
+		i)getDataSource
+		ii)getHibernateProperties
+		iii)getSessionFactory
+		iii)getTransactionManage
+        c)add maven dependencies
+		i)spring-orm
+		ii)hibernate-core
+                iii)h2
+
+2)DO Objects/Model - for each table
+	1)create a separate package
+		com.niit.shoppingcart.model
+	2)create class for each table
+
+Assignment :  create other classes for all other tables.
+	
+3)DAO/DAOImpl
+	i)create a saparate package
+		com.niit.shoppingcart.dao
+		a)Create separate interface for each table/model
+		b)declare the methods (CRUD Operations)
+
+
+4)JUnit Testcases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Autowired
+----------
+Class A
+{
+public void showMessage()
+{
+   sop("Hello");
+}
+
+}
+------------
+Class B
+{
+
+//A a = new A();
+@Autowired
+A a;
+
+a.showMessage();
+
+
+}
+
+
+
+
+
+
+
+
+
+why we should create instance with new operator
+-------------------------------------------------
+public Class Employee
+{
+
+
+
+}
+
+Dev1
+----
+public Class testEmployee
+{
+   Employee e = new Employee()
+}
+
+Dev2 / in other
+
+public Class Department
+{
+
+  Employee  e = new Employee();
+
+
+
+
+}
+
+
+
+
+
+
 
 
 
