@@ -24,6 +24,7 @@ public interface CategoryDAO {
 	public Category get(String name);
 	
 	//get all the categories
+	//select * from Category
 	public List<Category>  list();
 	
 	

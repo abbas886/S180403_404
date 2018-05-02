@@ -1,19 +1,30 @@
 package com.niit.shoppingcart.dao.impl;
 
+import java.sql.Date;
 import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.domain.User;
 
+
+@Repository("userDAO")
+@Transactional
 public class UserDAOImpl implements UserDAO {
 
 	// Get the Sesion Factory
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	@Autowired
+	private User user;
 
 	public boolean save(User user) {
 		// get session from Session Factory
@@ -21,8 +32,12 @@ public class UserDAOImpl implements UserDAO {
 		// 1) Open new Session
 		// 2) continue with Current Session
 		try {
-			sessionFactory.openSession().save(user);
+			//set current date
+			user.setAdded_date(new Date(System.currentTimeMillis()));
+			sessionFactory.getCurrentSession().save(user);
 		} catch (Exception e) {
+			//print the complete exception stack trace
+			e.printStackTrace();
 			return false;
 		}
 		// above line : opening session saving user in user table.
@@ -33,8 +48,14 @@ public class UserDAOImpl implements UserDAO {
 
 	public boolean delete(String emailID) {
 		try {
-			sessionFactory.getCurrentSession().delete(emailID, User.class);
+			user = get(emailID);
+			if(user==null)
+			{
+				return false;
+			}
+			sessionFactory.getCurrentSession().delete(user);
 		} catch (Exception e) {
+			e.printStackTrace();
 			return false;
 		}
 		return true;
@@ -56,7 +77,7 @@ public class UserDAOImpl implements UserDAO {
 	public User get(String emailID) {
 		//select * from User where emailID = ?
 		
-	return	(User) sessionFactory.getCurrentSession().get(emailID, User.class);
+	return	(User) sessionFactory.getCurrentSession().get(User.class,emailID);
 		
 	}
 
@@ -64,10 +85,21 @@ public class UserDAOImpl implements UserDAO {
 		return sessionFactory.getCurrentSession().createQuery("from User").list();
 	}
 
-	public boolean validate(String emailID, String password) {
+	@SuppressWarnings("deprecation")
+	public User validate(String emailID, String password) {
 		//will discuss tomorrow
-		// TODO Auto-generated method stub
-		return false;
+		//select * from User where emailID = ?  and password = ?
+	return	(User) sessionFactory.getCurrentSession().createCriteria(User.class)
+			.add(Restrictions.eq("emailID", emailID))
+			.add(Restrictions.eq("password", password)).uniqueResult();
+		
 	}
 
 }
+
+
+
+
+
+
+

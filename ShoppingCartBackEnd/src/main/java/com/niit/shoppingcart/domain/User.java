@@ -3,6 +3,7 @@ package com.niit.shoppingcart.domain;
 import java.sql.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 //2)To specific that it is not normal class -- to map to a table
 @Component   //will create instance of User class --- user
 @Table       //This User class will map to User Table
+@Entity     //which map to a table
 public class User {
 	
 	//we specified this User to should map to User Table
@@ -43,6 +45,62 @@ public class User {
 	private Date  added_date;
 	
 	private Character role;
+
+	public String getEmailID() {
+		return emailID;
+	}
+
+	public void setEmailID(String emailID) {
+		this.emailID = emailID;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public Date getAdded_date() {
+		return added_date;
+	}
+
+	public void setAdded_date(Date added_date) {
+		this.added_date = added_date;
+	}
+
+	public Character getRole() {
+		return role;
+	}
+
+	public void setRole(Character role) {
+		this.role = role;
+	}
 	
 	
 	

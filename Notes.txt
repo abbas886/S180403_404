@@ -1,4 +1,4 @@
-09/04/18
+09/04/18 (3:30 to 5:30)
 ---------
 MD Abbas.
 
@@ -702,9 +702,40 @@ Assignment :  create other classes for all other tables.
 		com.niit.shoppingcart.dao
 		a)Create separate interface for each table/model
 		b)declare the methods (CRUD Operations)
+		c)create impmentation class
 
 
 4)JUnit Testcases
+
+
+
+
+
+
+
+
+
+java_statement
+
+try
+{
+sum=a+b
+}
+catch(Exception e)
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -811,6 +842,319 @@ public Class Department
 
 
 }
+
+
+27/04/18
+--------
+Yesterday :
+1)We created user model/domain class
+2)we created UserDAO - Interface
+	a)declared the methods
+3)We created UserDAOImpl - Class
+	a)implemented methods
+
+Today : - Just like repitation
+	instead of User - Category
+
+1)Create Category class - domain/model/bean - DONE
+2)Create CategoryDAO - interface            - DONE
+	a)declare the required methods      - DONE 
+3)Create CategoryDAOImpl - Class            - DONE
+	b)implement the methods which are there in CategoryDAO -DONE
+
+
+The same thing - you have do for Product
+--copy paste the interace and class
+
+
+
+Relationship/Association  : Between the Objects/classes
+-------------------------------------------------------
+
+1)Generalization   :  Inheritance
+	: Relationship : a type of /  a kind of 
+        Ex: Employee(salary) is type of Person(name, address, mobile)
+            ContractEmployee(durnation) is a type of Employee
+            PermanentEmployee(pf) is a type of Employee
+            Employee extends Person
+            ContractEmployee extends Employee
+	    PermanentEmployee extends Employee
+ 
+	    
+
+2)Composition  - Relationship:  part of  - Tightly Coupled
+3)Aggregation  - Relationship:  part of  - Loosely coupled  (DAO - Model)
+
+Student is part of Branch
+Page is part of Book
+
+Address is part of Employee
+Employee is part of Department
+
+public Class Employee
+{
+  private Address address;
+  
+}
+
+
+4)Realization  - Interfaces - implmentatino class
+
+Multiplecity
+------------
+1..1      :Employee--Address
+1..Many   :Category - Product
+Many..1    : Product - Category
+Many..Many : Teacher - Subject
+Recursive. :
+
+public Class Employee
+{
+
+ private int id;
+ private String name;
+ private int salary;
+ privaet Employee  manager;
+
+}
+
+
+
+
+OOPS
+----
+data hiding
+
+
+
+
+
+Assignment:
+-----------
+
+1)Create domain objects for product and cart
+2)CartDAO and CartDAOImpl  (will modify)
+
+
+30/04/18
+--------
+Note: 
+1)There is no session tomorrow i.e., 01/05/18
+2)As a compensation, session will be there on 05/05/18(coming saturday)
+-------
+3)Those who are not clear/attended test can write after this session
+	Today).
+
+Yesterday
+---------
+User, Product and Category - tables/DO/DAO and DAO Impl
+
+Today
+-----
+Cart 
+
+
+
+
+
+
+
+JUnitTestCases
+--------------
+It is program to test other progeams/api/method
+1)Maven Dependency - JUnit
+2)Annotations  ///before method
+	a)@Test    
+	b)@Before  //Before executing each test case, this method will be executed
+	c)@BeforeClass //Before executing any one of the test case, this method will be executed
+
+
+
+
+Exceptions
+-----------
+1)org.springframework.beans.factory.NoSuchBeanDefinitionException: 
+No bean named 'userDAO' available
+
+Solution:  
+1) if it model  ->  @Component
+2) if it DAO   ->  @Respository  (we are interacting with database repository)
+	
+
+02/05/18
+--------
+1)Test UserDAOTestCase
+	a)we written only one test case - saveUser
+2)Write other test cases.
+
+
+
+Error
+------
+1)ERROR: Connection is broken: 
+"java.net.ConnectException: Connection refused: connect: 
+localhost" [90067-196]
+
+Solution:    Open H2 in browser ( running db server)
+
+2)org.hibernate.MappingException: 
+Unknown entity: com.niit.shoppingcart.domain.User
+
+Soltuion: A)Check whether you have @Entity above the User class or not
+OR
+B)  In the ApplicationContextConfig.java class
+	check whethere you added annotated classes or not.
+
+
+3)ERROR: HHH000346: Error during managed flush 
+[org.hibernate.exception.ConstraintViolationException: 
+could not execute statement]
+NULL not allowed for column "MOBILE"
+
+Solution:   set mobile to user bevore calling save method
+
+
+4)ERROR: Unique index or primary key violation: 
+"PRIMARY_KEY_2 ON PUBLIC.USER(EMAILID) VALUES 
+('Rakesh@gmail.com', 1)"; SQL statement:
+
+Solution:  Give differernt mail id
+
+
+
+
+
+Testcase Outputs
+----------------
+1) Pass  (expected = actual)
+2) Fail  (expected != actual)
+3) Error (if program through any Exception)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

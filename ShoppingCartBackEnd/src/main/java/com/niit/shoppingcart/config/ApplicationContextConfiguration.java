@@ -14,6 +14,9 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.shoppingcart.domain.Product;
+import com.niit.shoppingcart.domain.User;
+
 @Configuration
 @ComponentScan("com.niit")
 @EnableTransactionManagement
@@ -52,8 +55,14 @@ public class ApplicationContextConfiguration {
 		//3 : Domain objects  (one class for each table)
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
-		
+		//adding all entities at a time.
 		sessionBuilder.scanPackages("com.niit");
+		
+		//adding entity one by one.
+		
+		//sessionBuilder.addAnnotatedClass(User.class);
+		//sessionBuilder.addAnnotatedClass(Product.class);
+		
 	
 		return sessionBuilder.buildSessionFactory();
 	}

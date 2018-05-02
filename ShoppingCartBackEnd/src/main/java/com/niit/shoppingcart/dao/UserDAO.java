@@ -40,7 +40,7 @@ public interface UserDAO {
 	//6 validate credentials
 	//At present we are not using spring security
 	//When we use spring security, we will remove this method
-	public boolean validate(String emailID, String password);
+	public User validate(String emailID, String password);
 	
 	
 	
