@@ -1,15 +1,21 @@
 package com.niit.shoppingcart.dao.impl;
 
+import java.sql.Date;
 import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.domain.Category;
 
 ///need to add  @Transactional
+@Repository("categoryDAO")
+@Transactional
 public class CategoryDAOImpl  implements CategoryDAO{
 	
 	
@@ -19,6 +25,8 @@ public class CategoryDAOImpl  implements CategoryDAO{
 
 	public boolean save(Category category) {
 		try {
+			//set the current system date to category
+			category.setAdded_date(new Date(System.currentTimeMillis()));
 			sessionFactory.getCurrentSession().save(category);
 			return true;
 		} catch (HibernateException e) {
@@ -49,7 +57,15 @@ public class CategoryDAOImpl  implements CategoryDAO{
 	public boolean delete(String name) {
 
 		try {
-			sessionFactory.getCurrentSession().delete(name,Category.class);
+			//before deleting,  check whether the record is exist or not
+			//if the record does not exist, return false;
+			Category category = get(name);
+			if(category==null)
+			{
+				return false;
+			}
+			
+			sessionFactory.getCurrentSession().delete(category);
 			return true;
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
@@ -64,7 +80,7 @@ public class CategoryDAOImpl  implements CategoryDAO{
 
 	public Category get(String name) {
 		
-	return	(Category) sessionFactory.getCurrentSession().get(name, Category.class);
+	return	(Category) sessionFactory.getCurrentSession().get(Category.class,name);
 		
 	}
 

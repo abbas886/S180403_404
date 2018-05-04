@@ -1031,6 +1031,64 @@ Testcase Outputs
 3) Error (if program through any Exception)
 
 
+Assignment
+-----------
+Write the test case for Category, product and Cart.
+
+04/05/18
+--------
+Category module
+
+
+
+Error
+-------
+1)No identifier specified
+@Id should be used for primary key field
+
+
+Assignment
+----------
+Write the test case for CartDAO....Tommorrow - saturday
+--same timings.
+
+
+
+
+Nextweek
+---------
+Go back to Front Project  - integration with back end..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

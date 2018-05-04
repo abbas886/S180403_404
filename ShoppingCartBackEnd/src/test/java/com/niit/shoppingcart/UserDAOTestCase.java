@@ -44,12 +44,12 @@ public class UserDAOTestCase {
 	public void saveUserTestCase()
 	{
 		user = new User();
-		user.setEmailID("Subham@gmail.com");
-		user.setName("Subham Kumar");
-		user.setPassword("subham@123");
+		user.setEmailID("Shubam@gmail.com");
+		user.setName("SHUBHAM KUMAR SHUKLA");
+		user.setPassword("Shubam@123");
 		user.setRole('C');
-		user.setMobile("555555");
-		user.setAddress(" M Borivali");
+		user.setMobile("886666");
+		user.setAddress(" Delhi");
 		
 		
 		
@@ -80,16 +80,25 @@ public class UserDAOTestCase {
 	}
 	
 	@Test
-	public void deleteUserTestCase()
+	public void deleteUserSuccessTestCase()
 	{
-		boolean actual = userDAO.delete("Prabhat1@gmail.com");
+		boolean actual = userDAO.delete("Prabhat@gmail.com");
 		Assert.assertEquals(" delete user test case",true, actual);
 	}
 	
 	@Test
+	public void deleteUserFailureTestCase()
+	{
+		boolean actual = userDAO.delete("Prabhat1@gmail.com");
+		Assert.assertEquals(" delete user test case",false, actual);
+	}
+	
+	
+	
+	@Test
 	public void getUserTestCase()
 	{
-	user=	userDAO.get("Prabhat1@gmail.com");
+	user=	userDAO.get("Prabhat@gmail.com");
 	Assert.assertNotNull(user);
 	}
 	

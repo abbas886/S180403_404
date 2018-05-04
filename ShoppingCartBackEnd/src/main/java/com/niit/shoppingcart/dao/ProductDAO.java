@@ -27,6 +27,19 @@ public interface ProductDAO {
 	public List<Product>  list();
 	
 	
+	//search for all products under 10k
+	
+	public List<Product> list(int amount);
+	
+	//search for all product where the cost is between 10k and 20k
+	
+	public List<Product> list(int minAmount, int MaxAmout);
+	
+	//search for all particular products 
+	//where the cost is between 10k and 20k
+	
+	public List<Product> list(String productName, int minAmount, int MaxAmout);
+	
 	
 	
 	

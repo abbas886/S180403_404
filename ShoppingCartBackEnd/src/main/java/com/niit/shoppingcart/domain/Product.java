@@ -2,14 +2,18 @@ package com.niit.shoppingcart.domain;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component   //will create instance of User class --- user
 @Table 
+@Entity
 public class Product {
 	
+	@Id
 	private String id;
 	
 	private String name;
@@ -24,10 +28,11 @@ public class Product {
 	//
 	private String category_name;
 
-	/*public String getId() {
+	
+	public String getId() {
 		return id;
-	}*/
-/*
+	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -35,7 +40,7 @@ public class Product {
 	public String getName() {
 		return name;
 	}
-*/
+
 	public void setName(String name) {
 		this.name = name;
 	}
