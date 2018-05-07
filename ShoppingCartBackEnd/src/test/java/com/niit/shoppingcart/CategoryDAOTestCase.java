@@ -41,8 +41,8 @@ private static AnnotationConfigApplicationContext context;
 	@Test
 	public void saveCategoryTestCase()
 	{
-		category.setName("WoMen");
-		category.setDescription("WoMen Category ");
+		category.setName("Furniture");
+		category.setDescription("Furniture Category ");
 		//category.setAdded_date(added_date);  Take system date
 		//in CategoryDAOImpl
 		//call save method and compare expected with actaul

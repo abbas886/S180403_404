@@ -38,6 +38,10 @@ ${msg}
 	<c:if test="${isUserClickedRegister==true}">
 		<jsp:include page="register.jsp"></jsp:include>
 	</c:if>
+	
+	<c:if test="${isAdmin==true}">
+		<jsp:include page="admin/admin.jsp"></jsp:include>
+	</c:if>
 
 
 </div>

@@ -2,6 +2,10 @@ package com.niit.shoppingcart.domain;
 
 import java.sql.Date;
 
+import javax.annotation.Generated;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,8 +13,10 @@ import org.springframework.stereotype.Component;
 
 @Component   //will create instance of User class --- user
 @Table 
+@Entity
 public class Cart {
 	@Id
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	private String emailID;

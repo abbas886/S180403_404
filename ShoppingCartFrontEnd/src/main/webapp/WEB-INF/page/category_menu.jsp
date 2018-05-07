@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,33 +18,21 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
 
-    <ul class="nav navbar-nav">
+<c:forEach var="category" items="${categories}">
+<ul class="nav navbar-nav">
       
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Electronics <span class="caret"></span></a>
+      <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown"
+       href="#">${category.name} <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Mobile</a></li>
-          <li><a href="#">Laptop</a></li>
-          <li><a href="#">Television</a></li>
-        </ul>
+         </ul>
       </li>
       
-       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Men <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Footwear</a></li>
-          <li><a href="#">sprotes</a></li>
-          <li><a href="#">Watches</a></li>
-        </ul>
-      </li>
       
-       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Home & Furniture <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Beds</a></li>
-          <li><a href="#">Sofa</a></li>
-          <li><a href="#">Curtains</a></li>
-        </ul>
-      </li>
      
     </ul>
+</c:forEach>
+    
   </div>
 </nav>
   

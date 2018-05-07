@@ -30,15 +30,21 @@
 			<version>4.0.0</version>
 		</dependency>
 
-<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
-<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>jstl</artifactId>
-    <version>1.2</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 
+		<!-- add back project dependencies -->
+		<dependency>
+			<groupId>com.niit</groupId>
+			<artifactId>ShoppingCartBackEnd</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 
+		</dependency>
 
 
 

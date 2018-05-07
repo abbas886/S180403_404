@@ -1,14 +1,29 @@
 package com.niit.shoppingcart.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.domain.Category;
+
 //convert this class into Servlet / Controller
 @Controller
 public class HomeController {
+	
+	
+	@Autowired
+	private CategoryDAO categoryDAO;
+	
+	@Autowired
+	private Category category;
+	
+	
 	
 	//we have to define hadler mapping
 	//Different types of mappings
@@ -21,10 +36,18 @@ public class HomeController {
 	//   http://localhost:8080/shoppingcart/
 		@GetMapping("/")
 	//@RequestMapping(value="/",   method = RequestMethod.GET)
-	public String homePage()
+	public ModelAndView homePage()
 	{
-			System.out.println("The method homePage is called");
-		return "home";
+			ModelAndView mv = new ModelAndView("home");
+			
+			//get all the categories categoryDAO.list()
+		List<Category> categories=	categoryDAO.list();
+		
+		mv.addObject("categories", categories);
+		
+		return mv;
+		
+			
 	}
 		
 	//http://localhost:8080/shoppingcart/login	

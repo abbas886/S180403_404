@@ -1059,6 +1059,191 @@ Nextweek
 ---------
 Go back to Front Project  - integration with back end..
 
+5/5/18
+-------
+
+Yesterday:  Product module related test cases
+
+
+Today: Card module related test cases
+
+
+Next week:  Integrate front <--> backend 
+
+
+Autogeneration
+--------------
+1)Hibernate Annotation
+2)Databse sequence
+	i)create sequence sequance_name
+		(min=100, max=100000, step=1, cycle=true    )
+3)generate rand number in java
+	-0 to 1
+4)prgramatically get max value increase by 1
+
+
+
+
+07/05/18
+--------
+Today
+------
+Integrating front end - back end project.
+
+1)ProjectA  - ClassA -  methodA
+
+2)ProjectB  -  ClassB  - methodB
+from methodB, call methodA
+
+Options
+-------
+1)if both projects are in the same workspace
+	a)include projectA in projectB build path
+
+2)if both projects are in the different workspace
+
+
+
+JSTL -> JSP Standard Tag Library
+
+
+We supposed to load all the categories(products)
+whenever user type http://localhost:8080/shoppingcart/
+
+@GetMapping("/")
+public ModelAndView load()
+{
+//get all the categories from category dao
+//set to ModelAndView object
+
+} 
+
+
+Navigate to specific page based on role
+---------------------------------------
+
+1)Create a folder - admin - DONE
+	a)creating admin.jsp
+	b)category.jsp
+	c)supplier.jsp
+	d)product.jsp
+
+2)get the role of the logged-in user - DONE
+	UserController
+		User user = validate(id,pwd);
+			if(user.getRole()=='C')
+
+			
+3)if the user is admin, show admin.jsp  -DONE
+
+
+Tomorrow
+--------
+admin.jsp - >  added 3 anchor tags
+1)if admin click manage categories -> include category.jsp
+2)if admin click manage products-> include product.jsp
+3)if admin click manage suppliers-> include supplier.jsp
+
+category.jsp
+------------
+
+1)add two text fields name and description
+2)add one button - save
+3)Create CategoryController.  
+	a)save category method handler
+		i)call categoryDAO.save(category);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
