@@ -1,5 +1,7 @@
 package com.niit.shoppingcart.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,9 @@ public class UserController {
 	
 	@Autowired
 	private User user;
+	
+	@Autowired
+	private HttpSession httpSession;
 	
 	
 	@PostMapping("/validate")
@@ -41,15 +46,18 @@ public class UserController {
 			
 			if(user.getRole()=='A')
 			{
-				mv.addObject("isAdmin", true);
+				//mv.addObject("isAdmin", true);
+				httpSession.setAttribute("isAdmin", true);
 			}
 			else if(user.getRole()=='C')
 			{
-				mv.addObject("isUser", true);
+				//mv.addObject("isUser", true);
+				httpSession.setAttribute("isUser", true);
 			}
 			else if(user.getRole()=='S')
 			{
-				mv.addObject("isSupplier", true);
+				//mv.addObject("isSupplier", true);
+				httpSession.setAttribute("isSupplier", true);
 			}
 		}
 		else

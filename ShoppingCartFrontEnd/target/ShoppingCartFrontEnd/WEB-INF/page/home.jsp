@@ -11,11 +11,10 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 
 </head>
-<body class="bodybackground">
+<body>
 
 ${msg}
-${loginMessage}
-${logoutMessage}
+
 
 	<center>
 		<h2 >Welcome to Shopping Cart</h2>
@@ -23,6 +22,7 @@ ${logoutMessage}
 
 	<!--  include login_header.jsp here -->
 	<jsp:include page="login_header.jsp"></jsp:include>
+	<jsp:include page="category_menu.jsp"></jsp:include>
 	
 	<%-- <jsp:include page="imageslider.jsp"></jsp:include> --%>
 
@@ -37,6 +37,10 @@ ${logoutMessage}
 	
 	<c:if test="${isUserClickedRegister==true}">
 		<jsp:include page="register.jsp"></jsp:include>
+	</c:if>
+	
+	<c:if test="${isAdmin==true}">
+		<jsp:include page="admin/admin.jsp"></jsp:include>
 	</c:if>
 
 

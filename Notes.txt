@@ -1155,6 +1155,86 @@ category.jsp
 
 
 
+08/05/18
+---------
+
+Yesterday:
+a)Intergration frontend - back
+b)User module - validate
+c)category - get all categories
+
+
+
+
+Today:
+--------
+admin.jsp - >  added 3 anchor tags - DONE
+1)if admin click manage categories -> include category.jsp -DONE
+2)if admin click manage products-> include product.jsp   -DONE
+3)if admin click manage suppliers-> include supplier.jsp  -DONE
+
+category.jsp
+------------
+
+1)add two text fields name and description - DONE
+2)add one button - save                    - DONE
+3)Create CategoryController.               - DONE ( Pending)
+	a)save category method handler     -  DONE
+		i)call categoryDAO.save(category);  -DONE
+
+4)display list of categories in category.jsp
+5)add edit/delete links in this page.
+
+Tomorrow
+--------
+
+4)display list of categories in category.jsp - in table format
+5)add edit/delete links in this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+scopes
+------
+1)Request scope:  
+	The object will be available between only two resources
+		(Resources -> jsp/controller)
+ModelAndView  // Model
+2)Session scope:
+	The object will be available among all the resources.
+	till loggout.
+HttpSession
+3)Application
+	The object will be available among all the resources.
+	till server shutdown.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

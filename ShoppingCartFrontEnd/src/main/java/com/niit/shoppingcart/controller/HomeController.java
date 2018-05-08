@@ -2,6 +2,8 @@ package com.niit.shoppingcart.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +25,9 @@ public class HomeController {
 	@Autowired
 	private Category category;
 	
+	@Autowired
+	private HttpSession httpSession;
+	
 	
 	
 	//we have to define hadler mapping
@@ -43,8 +48,11 @@ public class HomeController {
 			//get all the categories categoryDAO.list()
 		List<Category> categories=	categoryDAO.list();
 		
-		mv.addObject("categories", categories);
+		//will be available only in HomeController and Home.jsp
+		//mv.addObject("categories", categories);
 		
+		//categories should be available in all resources
+		httpSession.setAttribute("categories", categories);
 		return mv;
 		
 			
