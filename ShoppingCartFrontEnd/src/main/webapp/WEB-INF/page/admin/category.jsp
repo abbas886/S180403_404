@@ -40,9 +40,6 @@
 				| <a href="category/edit/?name=${category.name}"> edit</a> </td>
 
 			</tr>
-
-			<br>
-
 		</c:forEach>
 	</table>
 

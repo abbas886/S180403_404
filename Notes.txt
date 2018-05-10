@@ -1235,6 +1235,52 @@ Tomorrow
 ---------
 The same operations  -- Supplier and Product
 
+10/05/18
+------------
+
+1)we already created supplier.jsp
+2)In supplier.jsp
+	a)create fields
+	b)add button - submit
+	c)display list of existing suppliers
+	d)delete/edit existing supplier details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

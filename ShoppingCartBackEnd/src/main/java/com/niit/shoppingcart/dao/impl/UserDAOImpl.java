@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.domain.User;
 
-
 @Repository("userDAO")
 @Transactional
 public class UserDAOImpl implements UserDAO {
@@ -22,7 +21,7 @@ public class UserDAOImpl implements UserDAO {
 	// Get the Sesion Factory
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Autowired
 	private User user;
 
@@ -32,11 +31,11 @@ public class UserDAOImpl implements UserDAO {
 		// 1) Open new Session
 		// 2) continue with Current Session
 		try {
-			//set current date
+			// set current date
 			user.setAdded_date(new Date(System.currentTimeMillis()));
-			sessionFactory.getCurrentSession().save(user);
+			sessionFactory.getCurrentSession().saveOrUpdate(user);
 		} catch (Exception e) {
-			//print the complete exception stack trace
+			// print the complete exception stack trace
 			e.printStackTrace();
 			return false;
 		}
@@ -49,8 +48,7 @@ public class UserDAOImpl implements UserDAO {
 	public boolean delete(String emailID) {
 		try {
 			user = get(emailID);
-			if(user==null)
-			{
+			if (user == null) {
 				return false;
 			}
 			sessionFactory.getCurrentSession().delete(user);
@@ -75,31 +73,29 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public User get(String emailID) {
-		//select * from User where emailID = ?
-		
-	return	(User) sessionFactory.getCurrentSession().get(User.class,emailID);
-		
+		// select * from User where emailID = ?
+
+		return (User) sessionFactory.getCurrentSession().get(User.class, emailID);
+
 	}
 
 	public List<User> list() {
 		return sessionFactory.getCurrentSession().createQuery("from User").list();
 	}
 
-
 	public User validate(String mail, String pwd) {
-		//will discuss tomorrow
-		//select * from User where emailID = ?  and password = ?
-	return	(User) sessionFactory.getCurrentSession().createCriteria(User.class)
-			.add(Restrictions.eq("emailID", mail))
-			.add(Restrictions.eq("password", pwd)).uniqueResult();
-		
+		// will discuss tomorrow
+		// select * from User where emailID = ? and password = ?
+		return (User) sessionFactory.getCurrentSession().createCriteria(User.class)
+				.add(Restrictions.eq("emailID", mail)).add(Restrictions.eq("password", pwd)).uniqueResult();
+
+	}
+
+	/**
+	 * This method will return list of users based on role
+	 */
+	public List<User> list(char role) {
+		return sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("role", role)).list();
 	}
 
 }
-
-
-
-
-
-
-

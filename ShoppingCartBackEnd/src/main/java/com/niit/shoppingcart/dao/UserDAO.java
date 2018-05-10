@@ -37,6 +37,10 @@ public interface UserDAO {
 	//will return list of user
 	public  List<User>    list();
 	
+	//get all the users based on the role.
+	public  List<User>    list(char role);
+	
+	
 	//6 validate credentials
 	//At present we are not using spring security
 	//When we use spring security, we will remove this method

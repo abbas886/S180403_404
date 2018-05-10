@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.ProductDAO;
+import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.domain.Category;
+import com.niit.shoppingcart.domain.Product;
+import com.niit.shoppingcart.domain.User;
 
 @Controller
 public class AdminController {
@@ -20,6 +24,20 @@ public class AdminController {
 	
 	@Autowired
 	private Category category;
+	
+	@Autowired
+	private UserDAO userDAO;
+	
+	@Autowired
+	private User user;
+	
+	
+	@Autowired
+	private ProductDAO productDAO;
+	
+	@Autowired
+	private Product product;
+	
 	
 	@Autowired
 	private HttpSession httpSession;
@@ -41,6 +59,10 @@ public class AdminController {
 	{
 		ModelAndView mv = new ModelAndView("home");
 		mv.addObject("isAdminClickedManageSupplires", true);
+		
+		List<User> suppliers = userDAO.list('S');
+		httpSession.setAttribute("suppliers", suppliers);
+		
 		return mv;
 	}
 	
@@ -49,6 +71,11 @@ public class AdminController {
 	{
 		ModelAndView mv = new ModelAndView("home");
 		mv.addObject("isAdminClickedManageProducts", true);
+		
+		List<Product> products =  productDAO.list();
+		httpSession.setAttribute("products", products);
+
+		
 		return mv;
 	}
 
