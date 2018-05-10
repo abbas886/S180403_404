@@ -27,7 +27,11 @@ public class CategoryDAOImpl  implements CategoryDAO{
 		try {
 			//set the current system date to category
 			category.setAdded_date(new Date(System.currentTimeMillis()));
-			sessionFactory.getCurrentSession().save(category);
+			//save method will create new record
+			//modify saveOrUpdate
+			//saveOrUpdate - will save if it is new record
+			//will update if is existing record.
+			sessionFactory.getCurrentSession().saveOrUpdate(category);
 			return true;
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block

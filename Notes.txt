@@ -1196,6 +1196,92 @@ Tomorrow
 
 
 
+FLOW
+-----
+1) Send Data
+	JSP->Controller->DAO->DB
+
+
+2) Receive Data
+	DB -> DAO -> Controller->JSP
+
+
+
+
+sending parameter through url
+------------------------------
+1)validate
+http://localhost:8080/shoppingcart/validate?emaild=anamika@gmail.com&password=anamika@123
+2)send category name
+http://localhost:8080/shoppingcart/category/delete?name=Women
+--give in anchor tag
+
+
+
+Mappings
+--------
+GetMapping  - get the data by sending parameter
+DeleteMapping - delete the dat1 be sending parameter
+PostMapping   - save the data 
+PutMapping    - to update data
+ 
+
+FlashAttribute
+---------------
+
+
+
+Tomorrow
+---------
+The same operations  -- Supplier and Product
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1225,7 +1311,10 @@ HttpSession
 	till server shutdown.
 
 
+09/05/18
+--------
 
+Instergating category module
 
 
 

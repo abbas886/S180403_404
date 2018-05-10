@@ -29,22 +29,12 @@ public class CategoryController {
 	@PostMapping("category/save")
 	public ModelAndView saveCategory(@RequestParam String name, @RequestParam String description) {
 
-		ModelAndView mv = new ModelAndView("home");
+		ModelAndView mv = new ModelAndView("redirect:/manage_categories");
 		category.setDescription(description);
 		category.setName(name);
 		// need to write one more condition.
 		if (categoryDAO.save(category)) {
 			mv.addObject("message", "Category created Successfully");
-			//load all categories again
-			//and set to httpSession
-			//get all the categories categoryDAO.list()
-			List<Category> categories=	categoryDAO.list();
-			
-			//will be available only in HomeController and Home.jsp
-			//mv.addObject("categories", categories);
-			
-			//categories should be available in all resources
-			httpSession.setAttribute("categories", categories);
 			return mv;
 		} else {
 			mv.addObject("message", "Could not create category.");
@@ -53,5 +43,51 @@ public class CategoryController {
 		return mv;
 
 	}
+	
+	
+	@GetMapping("/category/delete")
+	public ModelAndView deleteCategory(@RequestParam String name)
+	{
+		ModelAndView mv = new ModelAndView("redirect:/manage_categories");
+		
+		if(categoryDAO.delete(name))
+		{
+			mv.addObject("message", "The category successfully deleted");
+		}
+		else
+		{
+			mv.addObject("message", "Could not delete the category.  Please try after some time.");
+		}
+		return mv;
+	}
+	
+	
+	
+	
+	@GetMapping("/category/edit/")
+	public String editCategory(@RequestParam String name)
+	{
+		//ModelAndView mv = new ModelAndView("redirect:/manage_categories");
+		category = categoryDAO.get(name);
+		
+		//mv.addObject("category", category);
+		httpSession.setAttribute("selectedCategory", category);
+		
+		//why we need to have mv as we are using httpSession;
+		
+		//return mv;
+		
+		return "redirect:/manage_categories";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
