@@ -19,6 +19,8 @@ import com.niit.shoppingcart.domain.Product;
 @Transactional
 public class ProductDAOImpl  implements ProductDAO{
 	
+	@Autowired
+	private Product product;
 	
 	//Declare the SessionFactory -supposed automatically injected in the class
 	@Autowired
@@ -78,7 +80,14 @@ public class ProductDAOImpl  implements ProductDAO{
 
 	public Product get(String id) {
 		
-	return	(Product) sessionFactory.getCurrentSession().get(Product.class,id);
+	try {
+		product = (Product)sessionFactory.getCurrentSession().get(Product.class,id);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return null;
+	}
+	return product;
 		
 	}
 

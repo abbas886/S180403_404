@@ -66,7 +66,7 @@ private static AnnotationConfigApplicationContext context;
 	public void getProductSuccessTestCase()
 	{
 		
-	  Assert.assertNotNull(productDAO.get("PRD_MBL_002"));
+	  Assert.assertNotNull(productDAO.get("PRD_MEN_001"));
 	}
 	
 	@Test
@@ -80,9 +80,9 @@ private static AnnotationConfigApplicationContext context;
 	@Test
 	public void updateProductSuccessTestCase()
 	{
-		product = productDAO.get("PRD_MBL_002");
+		product = productDAO.get("PRD_MEN_001");
 		//update the description.
-		product.setPrice(40000);
+		product.setCategory_name("Men");
 		Assert.assertEquals(true,  productDAO.update(product));
 	}
 	
@@ -104,7 +104,7 @@ private static AnnotationConfigApplicationContext context;
 	@Test
 	public void deleteProductSuccessTestCase()
 	{
-		Assert.assertEquals(true,   productDAO.delete("Men"));
+		Assert.assertEquals(true,   productDAO.delete("PRD_WOMEN_Saree_001"));
 	}
 	
 	@Test

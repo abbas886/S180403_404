@@ -2060,6 +2060,18 @@ Remaining part of the project - I will continue.
 Note:  NO SLT Sessions from 14th to 17th of this month
        Due to planned studio maintanance days.
 
+Assignment :  Complete user, supplier, category and product modules
+excpetion image upload
+
+pending
+-------
+image upload
+cart functionality
+spring security
+
+
+
+
 Today's agenda
 ---------------
 
