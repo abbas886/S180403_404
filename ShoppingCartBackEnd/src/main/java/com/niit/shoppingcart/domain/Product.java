@@ -4,6 +4,8 @@ import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -23,6 +25,11 @@ public class Product {
 	private int price;
 	
 	private Date added_date;
+	
+	@ManyToOne
+	@JoinColumn(name = "category_name", updatable = false, insertable = false, nullable = false)
+	private Category category;
+
 	
 	//other annotations - @OneToMany  @ManyToOne
 	//
@@ -75,6 +82,14 @@ public class Product {
 
 	public void setCategory_name(String category_name) {
 		this.category_name = category_name;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 }

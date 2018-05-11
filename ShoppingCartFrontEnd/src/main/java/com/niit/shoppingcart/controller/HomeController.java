@@ -30,7 +30,7 @@ public class HomeController {
 	
 	
 	
-	//we have to define hadler mapping
+	//we have to define handler mapping
 	//Different types of mappings
 	//@GetMapping - doGet
 	//@PostMapping - doPost  - create
